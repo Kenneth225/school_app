@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-title>NOTES Cours</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            Matière : <strong>{{m}}</strong>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Filière : <strong>{{f}}</strong></p><br>
+          <p>Professeur : <strong>{{professeur}}</strong>
+        <ion-input type="hidden" [(ngModel)]="matiere" value="{{m}}"></ion-input>
+        <ion-input type="hidden" [(ngModel)]="filiere" value="{{f}}"></ion-input>
+        <ion-input type="hidden" [(ngModel)]="prof" value="{{professeur}}"></ion-input>
+        <ion-input type="hidden" [(ngModel)]="student" value="{{kal}}"></ion-input></p>
+          <ion-item>
+              <ion-label>Le plan remis par le professeur décrit le contenu du cours</ion-label>
+              <ion-select [(ngModel)]="glo">
+                <ion-option value="0.3">Complètement d’accord</ion-option>
+                <ion-option value="0.2">Plutôt d’accord</ion-option>
+                <ion-option value="0.1">Plutôt en désaccord</ion-option>
+                <ion-option value="0.0">Complètement en désaccord</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Le contenu du plan du cours est traité</ion-label>
+              <ion-select [(ngModel)]="con">
+                <ion-option value="0.3">Complètement d’accord</ion-option>
+                <ion-option value="0.2">Plutôt d’accord</ion-option>
+                <ion-option value="0.1">Plutôt en désaccord</ion-option>
+                <ion-option value="0.0">Complètement en désaccord</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Les documents remis par le professeur sont pertinents pour le cours</ion-label>
+              <ion-select [(ngModel)]="ped">
+                <ion-option value="0.3">Complètement d’accord</ion-option>
+                <ion-option value="0.2">Plutôt d’accord</ion-option>
+                <ion-option value="0.1">Plutôt en désaccord</ion-option>
+                <ion-option value="0.0">Complètement en désaccord</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Les présentations faites par le professeur sont claires</ion-label>
+              <ion-select [(ngModel)]="org">
+                <ion-option value="0.3">Complètement d’accord</ion-option>
+                <ion-option value="0.2">Plutôt d’accord</ion-option>
+                <ion-option value="0.1">Plutôt en désaccord</ion-option>
+                <ion-option value="0.0">Complètement en désaccord</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Les exemples et applications sont suffisants et précis</ion-label>
+              <ion-select [(ngModel)]="six">
+                <ion-option value="0.3">Complètement d’accord</ion-option>
+                <ion-option value="0.2">Plutôt d’accord</ion-option>
+                <ion-option value="0.1">Plutôt en désaccord</ion-option>
+                <ion-option value="0.0">Complètement en désaccord</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Les réponses aux questions sont satisfaisantes</ion-label>
+              <ion-select [(ngModel)]="un">
+                <ion-option value="0.3">Complètement d’accord</ion-option>
+                <ion-option value="0.2">Plutôt d’accord</ion-option>
+                <ion-option value="0.1">Plutôt en désaccord</ion-option>
+                <ion-option value="0.0">Complètement en désaccord</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Le professeur est disponible en dehors du cours</ion-label>
+              <ion-select [(ngModel)]="deux">
+                <ion-option value="0.3">Complètement d’accord</ion-option>
+                <ion-option value="0.2">Plutôt d’accord</ion-option>
+                <ion-option value="0.1">Plutôt en désaccord</ion-option>
+                <ion-option value="0.0">Complètement en désaccord</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>L’enseignement incite à vouloir approfondir le sujet et le savoir-faire</ion-label>
+              <ion-select [(ngModel)]="trois">
+                <ion-option value="0.3">Complètement d’accord</ion-option>
+                <ion-option value="0.2">Plutôt d’accord</ion-option>
+                <ion-option value="0.1">Plutôt en désaccord</ion-option>
+                <ion-option value="0.0">Complètement en désaccord</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Le professeur démontre et transmet de l’enthousiasme</ion-label>
+              <ion-select [(ngModel)]="quatre">
+                <ion-option value="0.3">Complètement d’accord</ion-option>
+                <ion-option value="0.2">Plutôt d’accord</ion-option>
+                <ion-option value="0.1">Plutôt en désaccord</ion-option>
+                <ion-option value="0.0">Complètement en désaccord</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Le professeur maîtrise le contenu de son cours</ion-label>
+              <ion-select [(ngModel)]="cinq">
+                <ion-option value="0.3">Complètement d’accord</ion-option>
+                <ion-option value="0.2">Plutôt d’accord</ion-option>
+                <ion-option value="0.1">Plutôt en désaccord</ion-option>
+                <ion-option value="0.0">Complètement en désaccord</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <button ion-button block color="primary" round (click)="noter()">Valider</button>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

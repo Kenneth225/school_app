@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong>ENEAM</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button (click)="new()" ion-button color="light" round item-end *ngIf="role ==='SENATEUR'" >
+        <strong><ion-icon name="md-add-circle"></ion-icon></strong>
+      </button>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+    
+  <div>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="kittens">
+        Communiqués
+      </ion-segment-button>
+      <ion-segment-button value="puppies">
+        Informations/Salle
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'puppies'">
+      
+
+        <ion-input type="hidden" 
+        [(ngModel)]="salle" value="{{kal}}"></ion-input>
+      <button (click)="ok()" ion-button block *ngIf="kal != ''">RAFRAICHIR</button><br>
+      <ion-item ion-item>
+          <ion-label>{{badge}}</ion-label> 
+        </ion-item>
+      <ion-item-sliding *ngFor="let info of infos;">
+              <ion-item > 
+        <h1>{{info.titre}}</h1>
+  <p>{{info.branche}}&nbsp;</p>
+      </ion-item>
+      <ion-item-options side="right">
+<button ion-button (click)="showtxt(info.titre,info.msg,info.signe)">
+  <ion-icon name ="text"></ion-icon>
+  Voir
+</button>
+      </ion-item-options>
+    </ion-item-sliding>
+    
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'kittens'">
+        <ion-item ion-item>
+            <ion-label>{{badgo}}</ion-label> 
+          </ion-item>
+      <ion-item-sliding *ngFor="let com of coms;">
+        <ion-item >
+  <h1>{{com.titre}}</h1>
+  <p>{{com.signe}}&nbsp;<strong>{{com.creation}}</strong></p>
+</ion-item>
+<ion-item-options side="left">
+<button ion-button (click)="showcom(com.titre,com.contenu,com.pic)">
+<ion-icon name ="text"></ion-icon>
+Voir
+</button>
+</ion-item-options>
+</ion-item-sliding>
+    </ion-list>
+  </div>
+  <ion-slides pager>
+
+    <ion-slide>
+      <img src="assets/img/ene.jpg">
+    </ion-slide>
+  
+    <ion-slide>
+      <img src="assets/img/icon.png">
+    </ion-slide>
+  
+    <ion-slide >
+      <img src="assets/img/SAK.jpg">
+    </ion-slide>
+  
+  </ion-slides>
+
+</ion-content>

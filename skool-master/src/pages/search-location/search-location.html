@@ -1,0 +1,43 @@
+<!-- -->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <strong>FORUM</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="search-location">
+  <div *ngFor="let msg of msgs">
+
+      <ion-card>
+          <ion-card-header>
+       <strong>{{msg.auteur}}</strong> le : {{msg.creation}}
+          </ion-card-header>
+          <hr>
+          <ion-card-content>
+              <p>{{msg.message}}</p>
+          </ion-card-content>
+        </ion-card>
+      
+      </div>
+  
+    
+      
+</ion-content>
+
+
+<ion-footer nopadding>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col col-7><ion-item>
+<ion-textarea [(ngModel)]="message"></ion-textarea>
+      </ion-item></ion-col>
+      <ion-col ><button ion-button block (click)="send()"><ion-icon name="md-send"></ion-icon></button></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
